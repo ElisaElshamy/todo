@@ -8,7 +8,7 @@ function App() {
     {
       id: 1,
       title: "Take out the trash",
-      completed: true,
+      completed: false,
     },
     {
       id: 2,
@@ -23,7 +23,14 @@ function App() {
   ];
   const [todos, setTodos] = useState(todolist);
   const markComplete = (id) => {
-    console.log(id);
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          todo.completed = !todo.completed;
+        }
+        return todo;
+      })
+    );
   };
 
   return (
