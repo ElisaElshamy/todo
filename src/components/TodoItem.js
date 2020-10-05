@@ -13,7 +13,16 @@ function TodoItem(props) {
     };
   };
 
-  return <div style={getStyle()}>{props.todo.title}</div>;
+  const markComplete = (e) => {
+    console.log(props);
+  };
+
+  return (
+    <div style={getStyle()}>
+      <input type="checkbox" onChange={markComplete.bind()} />{" "}
+      {props.todo.title}
+    </div>
+  );
 }
 
 TodoItem.propTypes = {
