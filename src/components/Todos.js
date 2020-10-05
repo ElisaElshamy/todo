@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TodoItem from "./TodoItem";
+import { PropTypes } from "prop-types";
 
 function Todos() {
   const todolist = [
@@ -22,5 +23,9 @@ function Todos() {
   const [todos, setTodos] = useState(todolist);
   return todos.map((todo) => <TodoItem key={todo.id} todo={todo} />);
 }
+
+Todos.propTypes = {
+  todo: PropTypes.array,
+};
 
 export default Todos;
