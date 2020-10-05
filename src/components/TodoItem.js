@@ -5,7 +5,12 @@ function TodoItem(props) {
   const getStyle = () => {
     const textStyle = props.todo.completed ? "line-through" : "none";
 
-    return { textDecoration: textStyle };
+    return {
+      background: "#f4f4f4",
+      padding: "10px",
+      borderBottom: "1px #ccc dotted",
+      textDecoration: textStyle,
+    };
   };
 
   return <div style={getStyle()}>{props.todo.title}</div>;
