@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TodoItem from "./TodoItem";
 
 function Todos() {
   const todolist = [
@@ -19,7 +20,7 @@ function Todos() {
     },
   ];
   const [todos, setTodos] = useState(todolist);
-  return todos.map((todo) => <h3>{todo.title}</h3>);
+  return todos.map((todo) => <TodoItem todo={todo} />);
 }
 
 export default Todos;
