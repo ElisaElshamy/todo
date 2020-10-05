@@ -20,7 +20,7 @@ function Todos() {
     },
   ];
   const [todos, setTodos] = useState(todolist);
-  return todos.map((todo) => <TodoItem todo={todo} />);
+  return todos.map((todo) => <TodoItem key={todo.id} todo={todo} />);
 }
 
 export default Todos;
