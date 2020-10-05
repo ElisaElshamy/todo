@@ -2,8 +2,9 @@ import React from "react";
 import { PropTypes } from "prop-types";
 
 function TodoItem(props) {
+  const { id, title, completed } = props.todo;
   const getStyle = () => {
-    const textStyle = props.todo.completed ? "line-through" : "none";
+    const textStyle = completed ? "line-through" : "none";
 
     return {
       background: "#f4f4f4",
@@ -13,14 +14,10 @@ function TodoItem(props) {
     };
   };
 
-  const markComplete = (e) => {
-    console.log(props);
-  };
-
   return (
     <div style={getStyle()}>
-      <input type="checkbox" onChange={markComplete.bind()} />{" "}
-      {props.todo.title}
+      <input type="checkbox" onChange={props.markComplete.bind(this, id)} />{" "}
+      {title}
     </div>
   );
 }

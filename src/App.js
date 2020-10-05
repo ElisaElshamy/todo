@@ -22,10 +22,13 @@ function App() {
     },
   ];
   const [todos, setTodos] = useState(todolist);
+  const markComplete = (id) => {
+    console.log(id);
+  };
 
   return (
     <div className="App">
-      <Todos todos={todos} />
+      <Todos todos={todos} markComplete={markComplete} />
     </div>
   );
 }
