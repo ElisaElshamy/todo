@@ -22,6 +22,8 @@ function App() {
     },
   ];
   const [todos, setTodos] = useState(todolist);
+
+  // Toggle Complete
   const markComplete = (id) => {
     setTodos(
       todos.map((todo) => {
@@ -33,9 +35,14 @@ function App() {
     );
   };
 
+  // Delete Todo
+  const delTodo = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="App">
-      <Todos todos={todos} markComplete={markComplete} />
+      <Todos todos={todos} markComplete={markComplete} delTodo={delTodo} />
     </div>
   );
 }
