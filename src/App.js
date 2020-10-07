@@ -37,7 +37,7 @@ function App() {
 
   // Delete Todo
   const delTodo = (id) => {
-    console.log(id);
+    setTodos(todos.filter((todo) => todo.id !== id));
   };
 
   return (
