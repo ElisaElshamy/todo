@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import Header from "./components/layout/Header";
 import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
@@ -45,7 +46,7 @@ function App() {
   // Add Todo
   const addTodo = (title) => {
     const newTodo = {
-      id: 4,
+      id: uuidv4(),
       title: title,
       completed: false,
     };
