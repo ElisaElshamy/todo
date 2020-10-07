@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Header from "./components/layout/Header";
+import AddTodo from "./components/AddTodo";
 import Todos from "./components/Todos";
 
 import "./App.css";
@@ -43,8 +44,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Todos todos={todos} markComplete={markComplete} delTodo={delTodo} />
+      <div className="container">
+        <Header />
+        <AddTodo />
+        <Todos todos={todos} markComplete={markComplete} delTodo={delTodo} />
+      </div>
     </div>
   );
 }
