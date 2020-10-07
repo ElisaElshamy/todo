@@ -18,7 +18,9 @@ function TodoItem(props) {
     <div style={getStyle()}>
       <input type="checkbox" onChange={props.markComplete.bind(this, id)} />{" "}
       {title}
-      <button style={btnStyle}>x</button>
+      <button onClick={props.delTodo.bind(this, id)} style={btnStyle}>
+        x
+      </button>
     </div>
   );
 }
