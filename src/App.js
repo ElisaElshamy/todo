@@ -42,11 +42,16 @@ function App() {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // Add Todo
+  const addTodo = (title) => {
+    console.log(title);
+  };
+
   return (
     <div className="App">
       <div className="container">
         <Header />
-        <AddTodo />
+        <AddTodo addTodo={addTodo} />
         <Todos todos={todos} markComplete={markComplete} delTodo={delTodo} />
       </div>
     </div>

@@ -12,7 +12,7 @@ export default function AddTodo(props) {
   const onSubmit = (e) => {
     e.preventDefault();
     props.addTodo(todoItem.title);
-    setTodoItem({ [e.target.name]: "" });
+    setTodoItem({ title: "" });
   };
 
   const [todoItem, setTodoItem] = useState(todo);
@@ -23,7 +23,7 @@ export default function AddTodo(props) {
         name="title"
         style={{ flex: 10, padding: "5px" }}
         placeholder="Add Todo ..."
-        value={todo.title}
+        value={todoItem.title}
         onChange={onChange}
       />
       <input type="submit" value="Submit" className="btn" style={{ flex: 1 }} />
