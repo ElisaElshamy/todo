@@ -44,7 +44,12 @@ function App() {
 
   // Add Todo
   const addTodo = (title) => {
-    console.log(title);
+    const newTodo = {
+      id: 4,
+      title: title,
+      completed: false,
+    };
+    setTodos([...todos, newTodo]);
   };
 
   return (
