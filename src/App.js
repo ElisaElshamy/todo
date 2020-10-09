@@ -34,7 +34,9 @@ function App() {
 
   // Delete Todo
   const delTodo = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then(() => setTodos(todos.filter((todo) => todo.id !== id)));
   };
 
   // Add Todo
