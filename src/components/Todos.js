@@ -15,6 +15,9 @@ function Todos(props) {
 
 Todos.propTypes = {
   props: PropTypes.array,
+  todo: PropTypes.object,
+  markComplete: PropTypes.func,
+  delTodo: PropTypes.func,
 };
 
 export default Todos;
