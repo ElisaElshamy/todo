@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import AddTodo from "./components/AddTodo";
+import About from "./components/pages/About";
 import Todos from "./components/Todos";
 
 import "./App.css";
@@ -54,13 +56,29 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <div className="container">
-        <Header />
-        <AddTodo addTodo={addTodo} />
-        <Todos todos={todos} markComplete={markComplete} delTodo={delTodo} />
+    <Router>
+      <div className="App">
+        <div className="container">
+          <Header />
+
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <>
+                <AddTodo addTodo={addTodo} />
+                <Todos
+                  todos={todos}
+                  markComplete={markComplete}
+                  delTodo={delTodo}
+                />
+              </>
+            )}
+          />
+          <Route path="/about" component={About} />
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
