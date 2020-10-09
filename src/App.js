@@ -5,28 +5,20 @@ import Header from "./components/layout/Header";
 import AddTodo from "./components/AddTodo";
 import About from "./components/pages/About";
 import Todos from "./components/Todos";
+import "./App.css";
+import axios from "axios";
 
 import "./App.css";
+import Axios from "axios";
 
 function App() {
-  const todolist = [
-    {
-      id: 1,
-      title: "Take out the trash",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Dinner with Raiden",
-      completed: false,
-    },
-    {
-      id: 3,
-      title: "Meeting with boss",
-      completed: false,
-    },
-  ];
-  const [todos, setTodos] = useState(todolist);
+  const [todos, setTodos] = useState([]);
+
+  React.useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/todos?_limit=10")
+      .then((res) => setTodos(res.data));
+  }, []);
 
   // Toggle Complete
   const markComplete = (id) => {
